@@ -20,6 +20,9 @@ export default function rewriteBareModuleIdentifiers(code, packageConfig) {
     // from the original file. This ensures minified
     // .mjs stays minified; see #149
     retainLines: true,
+    // Keep the code compact and decrease output size
+    // See #252
+    compact: true,
     plugins: [unpkgRewrite(origin, dependencies)]
   };
 
